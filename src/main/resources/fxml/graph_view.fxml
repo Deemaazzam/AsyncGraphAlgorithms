@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.graphapp.Controller">
+    <top>
+        <VBox spacing="5" >
+            <Label text="Find shortest path" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            
+            <HBox spacing="10">
+                <MenuButton fx:id="addVertexMenu" text="+ Add vertex">
+                    <items>
+                        <RadioMenuItem fx:id="labelTypeLetters" text="Label: A, B, C..." selected="true"/>
+                        <RadioMenuItem fx:id="labelTypeNumbers" text="Label: 1, 2, 3..."/>
+                    </items>
+                </MenuButton>
+                <Button fx:id="btnAddEdge" text="+ Add edge" />
+                <MenuButton fx:id="AlgorithmsMenu" text="Algorithms">
+                    <items>
+                        <RadioMenuItem fx:id="Dijsktra" text="Dijsktra" selected="true"/>
+                        <RadioMenuItem fx:id="BFS" text="BFS"/>
+                        <RadioMenuItem fx:id="DFS" text="DFS"/>
+                        <RadioMenuItem fx:id="FloydWarshall" text="FloydWarshall ALgorithm"/>
+                        <RadioMenuItem fx:id="GraphColoring" text="Graph  coloring"/>
+                        <RadioMenuItem fx:id="ConnectedComponents" text="Connected Components"/>
+                        <RadioMenuItem fx:id="CycleDetection" text="CycleDetection"/>
+                        <RadioMenuItem fx:id="TopologicalSort" text="Topological Sorting"/>
+                        <RadioMenuItem fx:id="MinimumSpanningTree" text="MInimum Spanning Tree"/>
+                    </items>
+                </MenuButton>
+                <Button fx:id="btnRemove" text="Remove object" />
+                <Button fx:id="btnUndo" text="Undo" />
+                <Button fx:id="btnLarge" text="Run Large Network" />
+            </HBox>
+            <VBox spacing="5" >
+    <!-- existing labels and controls -->
+    <Label fx:id="instructionLabel"
+           text="Click '+ Add vertex' then click on canvas to add a node."
+           style="-fx-background-color: lightgreen; -fx-padding: 5;" />
+
+    <Label text="Graph Data:" style="-fx-font-weight: bold;" />
+    <TextArea fx:id="graphDataArea" editable="false" prefRowCount="6" prefColumnCount="40" wrapText="true" />
+</VBox>
+
+            <Label fx:id="instructionLabel"
+                   text="Click '+ Add vertex' then click on canvas to add a node."
+                   style="-fx-background-color: lightgreen; -fx-padding: 5;" />
+        </VBox>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" width="900" height="500" style="-fx-border-color: lightgray;" />
+    </center>
+</BorderPane>
